@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37f817f1-cf2e-45ef-ae41-f1486607dfc4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Extraclase1/extraclase_socket/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Extraclase1/extraclase_socket/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ext/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ext/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ext/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ext/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extraclase_socket/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extraclase_socket/Server.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +34,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Interface1">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="extraclase_socket.Client" />
       <module name="Extraclase1" />
@@ -47,22 +55,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="extraclase_socket.Main" />
+    <configuration name="Frm1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ext.Frm1" />
       <module name="Extraclase1" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ext.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="extraclase_socket.Server" />
+    <configuration name="Frm2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ext.Frm2" />
       <module name="Extraclase1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="extraclase_socket.*" />
+          <option name="PATTERN" value="ext.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Interface1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ext.Interface1" />
+      <module name="Extraclase1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ext.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Interface2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ext.Interface2" />
+      <module name="Extraclase1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ext.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -71,14 +108,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Frm1" />
+      <item itemvalue="Application.Frm2" />
+      <item itemvalue="Application.Interface1" />
+      <item itemvalue="Application.Interface2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Interface1" />
+        <item itemvalue="Application.Interface2" />
+        <item itemvalue="Application.Frm1" />
+        <item itemvalue="Application.Frm2" />
         <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -105,7 +147,10 @@
       <option name="presentableId" value="Default" />
       <updated>1582992552501</updated>
       <workItem from="1582992557670" duration="10015000" />
-      <workItem from="1583018140218" duration="2277000" />
+      <workItem from="1583018140218" duration="7249000" />
+      <workItem from="1583064943213" duration="3547000" />
+      <workItem from="1583068531614" duration="355000" />
+      <workItem from="1583068911606" duration="782000" />
     </task>
     <servers />
   </component>
@@ -117,29 +162,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="190" y="126" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583020187512" />
-    <state width="1495" height="211" key="GridCell.Tab.0.bottom" timestamp="1583005827355">
+    <state x="498" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1583069655874">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583005827355" />
-    <state width="1495" height="211" key="GridCell.Tab.0.center" timestamp="1583005827355">
+    <state x="498" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1583069655874" />
+    <state x="516" y="298" width="504" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583068767811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583005827355" />
-    <state width="1495" height="211" key="GridCell.Tab.0.left" timestamp="1583005827355">
+    <state x="516" y="298" width="504" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1583068767811" />
+    <state width="1495" height="211" key="GridCell.Tab.0.bottom" timestamp="1583069630600">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583005827355" />
-    <state width="1495" height="211" key="GridCell.Tab.0.right" timestamp="1583005827355">
+    <state width="1495" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583069630600" />
+    <state width="1495" height="211" key="GridCell.Tab.0.center" timestamp="1583069630600">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583005827355" />
+    <state width="1495" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583069630600" />
+    <state width="1495" height="211" key="GridCell.Tab.0.left" timestamp="1583069630600">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583069630600" />
+    <state width="1495" height="211" key="GridCell.Tab.0.right" timestamp="1583069630600">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583069630600" />
     <state x="0" y="56" key="SettingsEditor" timestamp="1582993664573">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582993664573" />
-    <state x="418" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1583018147294">
+    <state x="418" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1583068914390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="418" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583018147294" />
+    <state x="418" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583068914390" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Extraclase1$Interface2.ic" NAME="Interface2 Coverage Results" MODIFIED="1583067779555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ext.*</FILTER>
+    </SUITE>
   </component>
 </project>
