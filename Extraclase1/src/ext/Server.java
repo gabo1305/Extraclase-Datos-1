@@ -14,7 +14,7 @@ public class Server extends Observable implements Runnable{
     private int port;
 
     public Server(int puerto){
-        this.port=port
+        this.port=port;
     }
 
     @Override
