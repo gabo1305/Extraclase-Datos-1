@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37f817f1-cf2e-45ef-ae41-f1486607dfc4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Extraclase1/extraclase_socket/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Extraclase1/extraclase_socket/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ext/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ext/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ext/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ext/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extraclase_socket/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extraclase_socket/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Extraclase1/ext/Interface1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Extraclase1/ext/Interface1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Extraclase1/ext/Interface1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Extraclase1/ext/Interface1$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Extraclase1/ext/Interface1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Extraclase1/ext/Interface1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ext/Interface1.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ext/Interface1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ext/Interface2.form" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Extraclase1" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Application.Interface1">
@@ -150,7 +150,8 @@
       <workItem from="1583018140218" duration="7249000" />
       <workItem from="1583064943213" duration="3547000" />
       <workItem from="1583068531614" duration="355000" />
-      <workItem from="1583068911606" duration="782000" />
+      <workItem from="1583068911606" duration="1905000" />
+      <workItem from="1583148832297" duration="5962000" />
     </task>
     <servers />
   </component>
@@ -162,38 +163,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="190" y="126" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583020187512" />
-    <state x="498" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1583069655874">
+    <state x="498" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1583073430814">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="498" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1583069655874" />
-    <state x="516" y="298" width="504" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583068767811">
+    <state x="498" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1583073430814" />
+    <state x="516" y="298" width="504" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583073456717">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="516" y="298" width="504" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1583068767811" />
-    <state width="1495" height="211" key="GridCell.Tab.0.bottom" timestamp="1583069630600">
+    <state x="516" y="298" width="504" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1583073456717" />
+    <state x="542" y="168" key="FileChooserDialogImpl" timestamp="1583155572531">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583069630600" />
-    <state width="1495" height="211" key="GridCell.Tab.0.center" timestamp="1583069630600">
+    <state x="542" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583155572531" />
+    <state width="1495" height="211" key="GridCell.Tab.0.bottom" timestamp="1583154873179">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583069630600" />
-    <state width="1495" height="211" key="GridCell.Tab.0.left" timestamp="1583069630600">
+    <state width="1495" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583154873179" />
+    <state width="1495" height="211" key="GridCell.Tab.0.center" timestamp="1583154873179">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583069630600" />
-    <state width="1495" height="211" key="GridCell.Tab.0.right" timestamp="1583069630600">
+    <state width="1495" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583154873179" />
+    <state width="1495" height="211" key="GridCell.Tab.0.left" timestamp="1583154873178">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583069630600" />
+    <state width="1495" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583154873178" />
+    <state width="1495" height="211" key="GridCell.Tab.0.right" timestamp="1583154873179">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583154873179" />
     <state x="0" y="56" key="SettingsEditor" timestamp="1582993664573">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582993664573" />
-    <state x="418" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1583068914390">
+    <state x="418" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1583148977749">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="418" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583068914390" />
+    <state x="418" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583148977749" />
+    <state x="2" y="34" key="new project wizard" timestamp="1583155574527">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="2" y="34" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1583155574527" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Extraclase1$Interface2.ic" NAME="Interface2 Coverage Results" MODIFIED="1583067779555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -3,6 +3,7 @@ package ext;
 
 import java.util.Observable;
 import java.util.Observer;
+import java.net.*;
 
 public class Interface1 extends javax.swing.JFrame implements Observer {
 
