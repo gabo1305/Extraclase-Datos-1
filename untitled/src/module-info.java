@@ -1,4 +1,4 @@
-module untitled {
+module interfaz {
     requires javafx.fxml;
     requires javafx.controls;
 
