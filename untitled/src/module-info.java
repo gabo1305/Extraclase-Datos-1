@@ -1,6 +1,6 @@
-module interfaz {
-    requires javafx.fxml;
+module Interfaz {
     requires javafx.controls;
+    requires javafx.fxml;
 
-    opens sample;
+    opens Interfaz to javafx.graphics;
 }
