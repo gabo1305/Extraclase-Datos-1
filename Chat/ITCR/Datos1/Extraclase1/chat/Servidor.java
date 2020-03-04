@@ -6,6 +6,7 @@ import java.awt.*;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -74,6 +75,10 @@ class GaboServidor extends JFrame implements Runnable {
 				message=paqueteRecibido.getMessage();
 
 				areatexto.append("\n "+ id+": "+message+ "to: "+ip);
+
+				Socket enviaDestinatario=new Socket(ip,5051);
+				ObjectOutputStream paqueteReenvio = new ObjectOutputStream(enviaDestinatario.getOutputStream());
+				
 
 				misocket.close();
 			}
