@@ -13,6 +13,7 @@ public class Cliente {
     public void levantarConexion(String ip, int puerto) {
         try {
             socket = new Socket(ip, puerto);
+
             mostrarTexto("Conectado a :" + socket.getInetAddress().getHostName());
         } catch (Exception e) {
             mostrarTexto("Excepción al levantar conexión: " + e.getMessage());
@@ -77,7 +78,7 @@ public class Cliente {
         try {
             do {
                 st = (String) bufferDeEntrada.readUTF();
-                mostrarTexto("\n[Servidor] => " + st);
+                mostrarTexto("\n[Servidor] => " + st  );
                 System.out.print("\n[Usted] => ");
             } while (!st.equals(COMANDO_TERMINACION));
         } catch (IOException e) {}
@@ -103,6 +104,11 @@ public class Cliente {
         mostrarTexto("Puerto: [5050 por defecto] ");
 
         String puerto = escaner.nextLine();
+
+        mostrarTexto("Ingrese su ID");
+
+        String ide = escaner.nextLine();
+
         if (puerto.length() <= 0) puerto = "5050";
         cliente.ejecutarConexion(ip, Integer.parseInt(puerto));
         cliente.escribirDatos();
