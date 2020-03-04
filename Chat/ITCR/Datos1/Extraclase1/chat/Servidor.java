@@ -78,7 +78,9 @@ class GaboServidor extends JFrame implements Runnable {
 
 				Socket enviaDestinatario=new Socket(ip,5051);
 				ObjectOutputStream paqueteReenvio = new ObjectOutputStream(enviaDestinatario.getOutputStream());
-				
+				paqueteReenvio.writeObject(paqueteRecibido);
+				enviaDestinatario.close();
+
 
 				misocket.close();
 			}

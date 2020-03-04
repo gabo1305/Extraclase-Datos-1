@@ -4,10 +4,8 @@ import javax.swing.*;
 import javax.xml.crypto.Data;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
+import java.net.ServerSocket;
 import java.net.Socket;
 
 
@@ -40,7 +38,7 @@ class GaboCliente extends JFrame{
 	
 }
 
-class LaminaGaboCliente extends JPanel{
+class LaminaGaboCliente extends JPanel implements Runnable{
 	
 	public LaminaGaboCliente(){
 
@@ -68,6 +66,9 @@ class LaminaGaboCliente extends JPanel{
 		add(miboton);	
 		
 	}
+
+
+
 	private class SendText implements ActionListener {
 
 
@@ -109,6 +110,30 @@ class LaminaGaboCliente extends JPanel{
 	private JTextArea campochat;
 	
 	private JButton miboton;
+
+	@Override
+	public void run() {
+		try{
+			ServerSocket servidorCliente= new ServerSocket(5051);
+
+			Socket cliente;
+
+			PaqueteEnvio paqueteRecibido;
+			while(true){
+
+				cliente=servidorCliente.accept();
+				ObjectInputStream flujoentrada= new ObjectInputStream(cliente.getInputStream());
+				paqueteRecibido= (PaqueteEnvio) flujoentrada.readObject();
+
+				campochat.append("\n"+ paqueteRecibido.getId() + ": "+ paqueteRecibido.getMessage());
+			}
+
+
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+
+	}
 	
 }
 
