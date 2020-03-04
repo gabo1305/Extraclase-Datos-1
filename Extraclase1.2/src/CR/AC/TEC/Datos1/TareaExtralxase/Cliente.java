@@ -10,7 +10,7 @@ public class Cliente {
     Scanner teclado = new Scanner(System.in);
     final String COMANDO_TERMINACION = "salir()";
 
-    public void levantarConexion(String ip, int puerto) {
+    public void levantarConexion(String ip, int puerto,String id) {
         try {
             socket = new Socket(ip, puerto);
 
@@ -57,14 +57,14 @@ public class Cliente {
         }
     }
 
-    public void ejecutarConexion(String ip, int puerto) {
+    public void ejecutarConexion(String ip, int puerto,String id) {
         Thread hilo = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    levantarConexion(ip, puerto);
+                    levantarConexion(ip, puerto,id);
                     abrirFlujos();
-                    recibirDatos();
+                    recibirDatos(id);
                 } finally {
                     cerrarConexion();
                 }
@@ -73,21 +73,20 @@ public class Cliente {
         hilo.start();
     }
 
-    public void recibirDatos() {
+    public void recibirDatos(String id) {
         String st = "";
         try {
             do {
                 st = (String) bufferDeEntrada.readUTF();
-                mostrarTexto("\n[Servidor] => " + st  );
-                System.out.print("\n[Usted] => ");
+                mostrarTexto("\n[Servidor] => " +st );
             } while (!st.equals(COMANDO_TERMINACION));
         } catch (IOException e) {}
     }
 
-    public void escribirDatos() {
+    public void escribirDatos(String id) {
         String entrada = "";
         while (true) {
-            System.out.print("[Usted] => ");
+            System.out.print(id+" =>");
             entrada = teclado.nextLine();
             if(entrada.length() > 0)
                 enviar(entrada);
@@ -107,10 +106,10 @@ public class Cliente {
 
         mostrarTexto("Ingrese su ID");
 
-        String ide = escaner.nextLine();
+        String id = escaner.nextLine();
 
         if (puerto.length() <= 0) puerto = "5050";
-        cliente.ejecutarConexion(ip, Integer.parseInt(puerto));
-        cliente.escribirDatos();
+        cliente.ejecutarConexion(ip, Integer.parseInt(puerto),id);
+        cliente.escribirDatos(id);
     }
 }
