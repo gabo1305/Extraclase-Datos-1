@@ -63,7 +63,10 @@ class LaminaGaboCliente extends JPanel implements Runnable{
 		SendText event= new SendText();
 		miboton.addActionListener(event);
 		
-		add(miboton);	
+		add(miboton);
+
+		Thread mihilo= new Thread(this);
+		mihilo.start();
 		
 	}
 
@@ -74,6 +77,7 @@ class LaminaGaboCliente extends JPanel implements Runnable{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			campochat.append("\n"+ campo1.getText());
 			try {
 				Socket misocket = new Socket("127.0.0.1",5050);
 				PaqueteEnvio data= new PaqueteEnvio();
@@ -126,6 +130,7 @@ class LaminaGaboCliente extends JPanel implements Runnable{
 				paqueteRecibido= (PaqueteEnvio) flujoentrada.readObject();
 
 				campochat.append("\n"+ paqueteRecibido.getId() + ": "+ paqueteRecibido.getMessage());
+
 			}
 
 
