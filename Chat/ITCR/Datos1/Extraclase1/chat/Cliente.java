@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.net.Socket;
 
 
@@ -44,8 +46,8 @@ class LaminaGaboCliente extends JPanel{
 
 		id=new JTextField(5);
 		add(id);
-		port = new JTextField(8);
-		add(port);
+		ip = new JTextField(8);
+		add(ip);
 	
 		JLabel texto=new JLabel("CHAT");
 		
@@ -75,7 +77,13 @@ class LaminaGaboCliente extends JPanel{
 				Socket misocket = new Socket("127.0.0.1",5050);
 				PaqueteEnvio data= new PaqueteEnvio();
 				data.setId(id.getText());
-				
+				data.setPort(ip.getText());
+				data.setMessage(campo1.getText());
+
+				ObjectOutputStream paqueteDatos = new ObjectOutputStream(misocket.getOutputStream());
+				paqueteDatos.writeObject(data);
+				misocket.close();
+
 				//DataOutputStream flujoSalida = new DataOutputStream(misocket.getOutputStream());
 				//flujoSalida.writeUTF(campo1.getText());
 				//flujoSalida.close();
@@ -96,7 +104,7 @@ class LaminaGaboCliente extends JPanel{
 		
 		
 		
-	private JTextField campo1,id,port;
+	private JTextField campo1,id,ip;
 
 	private JTextArea campochat;
 	
@@ -104,8 +112,8 @@ class LaminaGaboCliente extends JPanel{
 	
 }
 
-class PaqueteEnvio{
-	private String id,port,message;
+class PaqueteEnvio implements Serializable {
+	private String id,ip,message;
 
 	public String getId() {
 		return id;
@@ -115,12 +123,12 @@ class PaqueteEnvio{
 		this.id = id;
 	}
 
-	public String getPort() {
-		return port;
+	public String getIp() {
+		return ip;
 	}
 
-	public void setPort(String port) {
-		this.port = port;
+	public void setPort(String ip) {
+		this.ip = ip ;
 	}
 
 	public String getMessage() {

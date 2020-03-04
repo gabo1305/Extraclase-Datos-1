@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.DataInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -52,21 +53,34 @@ class GaboServidor extends JFrame implements Runnable {
 		System.out.println("ff");
 		try {
 			ServerSocket servidor = new ServerSocket(5050);
+			String id,ip,message;
+
+			PaqueteEnvio paqueteRecibido;
 
 			while (true) {
 				Socket misocket = servidor.accept();
-				DataInputStream flujoEntrada = new DataInputStream(misocket.getInputStream());
+				//DataInputStream flujoEntrada = new DataInputStream(misocket.getInputStream());
 
-				String message = flujoEntrada.readUTF();
+				ObjectInputStream paqueteDatos= new ObjectInputStream(misocket.getInputStream());
 
-				areatexto.append("\n" + message);
+
+
+				paqueteRecibido= (PaqueteEnvio) paqueteDatos.readObject();
+				//String message = flujoEntrada.readUTF();
+
+				//areatexto.append("\n" + message);
+				id=paqueteRecibido.getId();
+				ip=paqueteRecibido.getIp();
+				message=paqueteRecibido.getMessage();
+
+				areatexto.append("\n "+ id+": "+message+ "to: "+ip);
 
 				misocket.close();
 			}
 
 
 
-		} catch (IOException e) {
+		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 
