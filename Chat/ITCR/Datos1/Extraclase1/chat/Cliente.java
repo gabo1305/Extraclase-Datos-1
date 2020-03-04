@@ -41,13 +41,20 @@ class GaboCliente extends JFrame{
 class LaminaGaboCliente extends JPanel implements Runnable{
 	
 	public LaminaGaboCliente(){
+		String idUser= JOptionPane.showInputDialog("User:");
 
-		id=new JTextField(5);
+		JLabel nid= new JLabel("User:");
+
+		add(nid);
+
+		id=new JLabel();
+
+		id.setText(idUser);
 		add(id);
 		ip = new JTextField(8);
 		add(ip);
 	
-		JLabel texto=new JLabel("CHAT");
+		JLabel texto=new JLabel("-CHAT-");
 		
 		add(texto);
 
@@ -79,7 +86,7 @@ class LaminaGaboCliente extends JPanel implements Runnable{
 		public void actionPerformed(ActionEvent e) {
 			campochat.append("\n"+ campo1.getText());
 			try {
-				Socket misocket = new Socket("127.0.0.1",5050);
+				Socket misocket = new Socket("192.168.56.1",5050);
 				PaqueteEnvio data= new PaqueteEnvio();
 				data.setId(id.getText());
 				data.setPort(ip.getText());
@@ -109,7 +116,9 @@ class LaminaGaboCliente extends JPanel implements Runnable{
 		
 		
 		
-	private JTextField campo1,id,ip;
+	private JTextField campo1,ip;
+
+	private JLabel id;
 
 	private JTextArea campochat;
 	
