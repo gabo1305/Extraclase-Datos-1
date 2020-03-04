@@ -8,6 +8,12 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * Declaracion de clase cleinte
+ * @author Gabriel Solano
+ * version 3.0
+ *
+ */
 
 public class Cliente {
 
@@ -17,12 +23,14 @@ public class Cliente {
 		GaboCliente migabo=new GaboCliente();
 		
 		migabo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 	}
 
 }
 
-
+/**
+ * Para implementar interfaz
+ * @author Gabriel Solano
+ */
 class GaboCliente extends JFrame{
 	
 	public GaboCliente(){
@@ -38,6 +46,10 @@ class GaboCliente extends JFrame{
 	
 }
 
+/**
+ * Esta clase implementa la interfaz y la extension Runnable
+ *
+ */
 class LaminaGaboCliente extends JPanel implements Runnable{
 	
 	public LaminaGaboCliente(){
@@ -72,21 +84,31 @@ class LaminaGaboCliente extends JPanel implements Runnable{
 		
 		add(miboton);
 
+		//Hilos
 		Thread mihilo= new Thread(this);
 		mihilo.start();
 		
 	}
 
-
-
+	/**
+	 * Declaracion de clase privada, creada para enviar el texto
+	 * implemena ActionListener.
+	 *
+	 *
+	 */
 	private class SendText implements ActionListener {
 
-
+		/**
+		 *
+		 * Metododo Para capturar acciones del useuario
+		 * @param e
+		 * paramentro: El evento, como ingreso de texto
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			campochat.append("\n"+ campo1.getText());
 			try {
-				Socket misocket = new Socket("192.168.56.1",5050);
+				Socket misocket = new Socket("192.168.56.1",9999);
 				PaqueteEnvio data= new PaqueteEnvio();
 				data.setId(id.getText());
 				data.setPort(ip.getText());
@@ -96,42 +118,28 @@ class LaminaGaboCliente extends JPanel implements Runnable{
 				paqueteDatos.writeObject(data);
 				misocket.close();
 
-				//DataOutputStream flujoSalida = new DataOutputStream(misocket.getOutputStream());
-				//flujoSalida.writeUTF(campo1.getText());
-				//flujoSalida.close();
-
 			} catch (IOException ex) {
 				System.out.println(ex.getMessage());
 			}
 
-
-
-
-
 		}
 	}
-	
-	
-	
-		
-		
-		
+
 	private JTextField campo1,ip;
-
 	private JLabel id;
-
 	private JTextArea campochat;
-	
 	private JButton miboton;
-
 	@Override
+	/**
+	 * Metodo generado automaticamente por Runnable
+	 *
+	 */
 	public void run() {
 		try{
-			ServerSocket servidorCliente= new ServerSocket(5051);
-
+			ServerSocket servidorCliente= new ServerSocket(9090);
 			Socket cliente;
-
 			PaqueteEnvio paqueteRecibido;
+			//Ciclo infinito
 			while(true){
 
 				cliente=servidorCliente.accept();
@@ -139,7 +147,6 @@ class LaminaGaboCliente extends JPanel implements Runnable{
 				paqueteRecibido= (PaqueteEnvio) flujoentrada.readObject();
 
 				campochat.append("\n"+ paqueteRecibido.getId() + ": "+ paqueteRecibido.getMessage());
-
 			}
 
 
@@ -151,7 +158,17 @@ class LaminaGaboCliente extends JPanel implements Runnable{
 	
 }
 
+/**
+ * Declaracion de clase PaqueteEnvio
+ * son Setter y getter de id,ip y message, para poder modificar
+ * y obtener sus valores
+ */
 class PaqueteEnvio implements Serializable {
+	/**
+	 * @param id,ip,message
+	 *
+	 *
+	 */
 	private String id,ip,message;
 
 	public String getId() {
