@@ -41,12 +41,21 @@ class GaboCliente extends JFrame{
 class LaminaGaboCliente extends JPanel{
 	
 	public LaminaGaboCliente(){
+
+		id=new JTextField(5);
+		add(id);
+		port = new JTextField(8);
+		add(port);
 	
-		JLabel texto=new JLabel("CLIENTE");
+		JLabel texto=new JLabel("CHAT");
 		
 		add(texto);
+
+		campochat=new JTextArea(11,19);
+
+		add(campochat);
 	
-		campo1=new JTextField(20);
+		campo1=new JTextField(19);
 	
 		add(campo1);		
 	
@@ -64,10 +73,13 @@ class LaminaGaboCliente extends JPanel{
 		public void actionPerformed(ActionEvent e) {
 			try {
 				Socket misocket = new Socket("127.0.0.1",5050);
-				DataOutputStream flujoSalida = new DataOutputStream(misocket.getOutputStream());
-				flujoSalida.writeUTF(campo1.getText());
-				flujoSalida.close();
-				System.out.println(campo1.getText());
+				PaqueteEnvio data= new PaqueteEnvio();
+				data.setId(id.getText());
+				
+				//DataOutputStream flujoSalida = new DataOutputStream(misocket.getOutputStream());
+				//flujoSalida.writeUTF(campo1.getText());
+				//flujoSalida.close();
+
 			} catch (IOException ex) {
 				System.out.println(ex.getMessage());
 			}
@@ -84,8 +96,38 @@ class LaminaGaboCliente extends JPanel{
 		
 		
 		
-	private JTextField campo1;
+	private JTextField campo1,id,port;
+
+	private JTextArea campochat;
 	
 	private JButton miboton;
 	
+}
+
+class PaqueteEnvio{
+	private String id,port,message;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getPort() {
+		return port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 }

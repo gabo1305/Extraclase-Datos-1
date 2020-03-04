@@ -52,14 +52,17 @@ class GaboServidor extends JFrame implements Runnable {
 		System.out.println("ff");
 		try {
 			ServerSocket servidor = new ServerSocket(5050);
-			Socket misocket= servidor.accept();
-			DataInputStream flujoEntrada = new DataInputStream(misocket.getInputStream());
 
-			String message = flujoEntrada.readUTF();
+			while (true) {
+				Socket misocket = servidor.accept();
+				DataInputStream flujoEntrada = new DataInputStream(misocket.getInputStream());
 
-			areatexto.append("\n"  + message);
+				String message = flujoEntrada.readUTF();
 
-			misocket.close();
+				areatexto.append("\n" + message);
+
+				misocket.close();
+			}
 
 
 
