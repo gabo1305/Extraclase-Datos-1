@@ -54,14 +54,14 @@ class LaminaGaboCliente extends JPanel implements Runnable{
 	
 	public LaminaGaboCliente(){
 		String idUser= JOptionPane.showInputDialog("User:");
-
-		JLabel nid= new JLabel("User:");
+		JLabel nid= new JLabel("User: ");
 
 		add(nid);
 
 		id=new JLabel();
 
 		id.setText(idUser);
+
 		add(id);
 		ip = new JTextField(8);
 		add(ip);
@@ -108,14 +108,16 @@ class LaminaGaboCliente extends JPanel implements Runnable{
 		public void actionPerformed(ActionEvent e) {
 			campochat.append("\n"+ campo1.getText());
 			try {
-				Socket misocket = new Socket("192.168.56.1",9999);
+				Socket misocket = new Socket("192.168.0.2",9999);
 				PaqueteEnvio data= new PaqueteEnvio();
 				data.setId(id.getText());
-				data.setPort(ip.getText());
+				data.setIp(ip.getText());
 				data.setMessage(campo1.getText());
 
 				ObjectOutputStream paqueteDatos = new ObjectOutputStream(misocket.getOutputStream());
+
 				paqueteDatos.writeObject(data);
+
 				misocket.close();
 
 			} catch (IOException ex) {
@@ -155,7 +157,7 @@ class LaminaGaboCliente extends JPanel implements Runnable{
 		}
 
 	}
-	
+
 }
 
 /**
@@ -183,7 +185,7 @@ class PaqueteEnvio implements Serializable {
 		return ip;
 	}
 
-	public void setPort(String ip) {
+	public void setIp(String ip) {
 		this.ip = ip ;
 	}
 

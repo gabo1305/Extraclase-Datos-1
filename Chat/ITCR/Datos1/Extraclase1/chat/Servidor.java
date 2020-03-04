@@ -30,7 +30,7 @@ public class Servidor  {
  * @author Gabriel Solano
  */
 class GaboServidor extends JFrame implements Runnable {
-	
+
 	public GaboServidor(){
 
 		//Interfaz*
@@ -70,6 +70,7 @@ class GaboServidor extends JFrame implements Runnable {
 			PaqueteEnvio paqueteRecibido;
 
 
+
 			//Ciclo infinito para que el servidor siga esuchcando
 			while (true) {
 				Socket misocket = servidor.accept();
@@ -82,7 +83,7 @@ class GaboServidor extends JFrame implements Runnable {
 				ip=paqueteRecibido.getIp();
 				message=paqueteRecibido.getMessage();
 
-				areatexto.append("\n "+ id+": "+message+ "to: "+ ip);
+				areatexto.append("\n "+ id+ ": "+message+"  to:"+ ip);
 
 				Socket enviaDestinatario=new Socket(ip,9090);
 
